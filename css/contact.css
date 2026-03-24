@@ -1,0 +1,604 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', sans-serif;
+}
+
+body{
+    background:#ffffff;
+     
+    /* background:linear-gradient(90deg,#0a0a0ae6,#1d1800); */
+}
+
+/* ===== COLORS ===== */
+:root{
+    --gold1:#c9a227;
+    --gold2:#f5d76e;
+    --gold3:#fff3b0;
+    --dark:#0a0a0a;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:8px 60px;
+
+    background:linear-gradient(90deg,#0a0a0ae6,#1d1800);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+
+    z-index:1000;
+}
+
+/* ===== LOGO ===== */
+.logo img{
+    height:70px;
+    transition:0.3s ease;
+}
+
+.logo img:hover{
+    transform:scale(1.08);
+    filter:drop-shadow(0 0 10px var(--gold2));
+}
+
+/* ===== NAV LINKS ===== */
+.nav-links{
+    display:flex;
+    gap:50px;
+}
+
+/* NAV ITEM */
+.nav-item{
+    position:relative;
+    text-decoration:none;
+    color:#ffffff;
+    font-size:17px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+/* UNDERLINE */
+.nav-item::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0%;
+    height:2px;
+    background:linear-gradient(90deg,var(--gold1),var(--gold2),var(--gold3));
+    transition:width 0.4s ease;
+}
+
+/* HOVER */
+.nav-item:hover{
+    color:var(--gold2);
+}
+
+.nav-item:hover::after{
+    width:100%;
+}
+
+/* ACTIVE */
+.nav-item.active{
+    color:var(--gold2);
+}
+
+.nav-item.active::after{
+    width:100%;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-btn{
+    text-decoration:none;
+    padding:10px 26px;
+    border-radius:30px;
+    color:var(--gold2);
+    border:2px solid var(--gold2);
+    position:relative;
+    overflow:hidden;
+    transition:0.4s;
+    font-weight:600;
+}
+
+/* FILL EFFECT */
+.cta-btn::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(90deg,var(--gold1),var(--gold2));
+    transition:0.4s ease;
+    z-index:-1;
+}
+
+.cta-btn:hover::before{
+    left:0;
+}
+
+.cta-btn:hover{
+    color:#000;
+    box-shadow:0 0 18px rgba(245,215,110,0.5);
+}
+
+
+.contact-hero {
+  position: relative;
+  height: 80vh;
+  background: url("../images/contact.png") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Overlay */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgb(0, 7, 14));
+  top: 0;
+  left: 0;
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 16px;
+}
+
+/* 🔥 Slanted Bottom Effect */
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: white;
+
+  /* This creates the slant */
+  clip-path: polygon(0 70%, 100% 40%, 100% 100%, 0% 100%);
+
+}
+
+
+/* =============================Contact form ============================== */
+
+.contact-wrapper {
+  position: relative;
+  margin-top: -120px; /* 🔥 this creates overlap */
+  padding: 0 6%;
+  z-index: 5; 
+}
+
+/* ================= CARD ================= */
+/* .contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-left: 30px;
+    margin-right: 30px;
+   margin-bottom: 30px;
+   height: 70vh;
+
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+} */
+
+.contact-card {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;              /* ✅ OUTER PADDING (main fix) */
+  gap: 30px;                  /* space between left & right */
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  margin-bottom: 30px;
+}
+
+/* ================= LEFT SIDE ================= */
+.contact-info {
+  background: #f7f7f7;
+  padding: 60px 60px;
+}
+
+.contact-info h2 {
+  margin-bottom: 10px;
+}
+
+.contact-info p {
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.info-box {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.info-box i {
+  width: 45px;
+  height: 45px;
+  background:linear-gradient(90deg,var(--dark),var(--dark));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.contact-socials {
+  margin-top: 50px;
+  display: flex;
+  gap: 10px;
+}
+
+.contact-socials a {
+  width: 40px;        /* equal width */
+  height: 40px;       /* equal height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ background:linear-gradient(90deg,var(--gold1),var(--gold1));
+  color: #fff;
+
+  border-radius: 50%; /* makes perfect circle */
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+/* ================= FORM ================= */
+.contact-form {
+  padding: 40px;
+}
+
+.contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.input-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 6px;
+  outline: none;
+}
+
+textarea {
+  height: 120px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background:linear-gradient(90deg,var(--gold1),var(--gold1));
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact-socials a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .contact-card {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper {
+    margin-top: -80px;
+  }
+}
+
+
+/* ================= MAP SECTION ================= */
+.map-section {
+  padding: 100px 6%;
+  background: #050505;
+  color: #fff;
+  text-align: center;
+}
+
+/* HEADER */
+.map-header {
+  margin-bottom: 50px;
+}
+
+.map-header .tag {
+  color: #f5d76e;
+  letter-spacing: 2px;
+  font-size: 14px;
+}
+
+.map-header h2 {
+  font-size: 38px;
+  margin: 10px 0;
+}
+
+.map-header h2 span {
+  background: linear-gradient(90deg,#c9a227,#fff3b0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.map-header p {
+  color: #aaa;
+}
+
+/* ================= MAP WRAPPER ================= */
+.map-wrapper {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+/* MAP */
+.map-wrapper iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  filter: contrast(1.05) brightness(1.05);
+}
+
+/* ================= FLOATING CARD ================= */
+.map-card {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+
+  padding: 25px;
+  border-radius: 12px;
+
+  text-align: left;
+  max-width: 280px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* TEXT */
+.map-card h3 {
+  margin-bottom: 10px;
+  color: #f5d76e;
+}
+
+.map-card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+.map-card i {
+  color: #f5d76e;
+  margin-right: 8px;
+}
+
+/* BUTTON */
+.map-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+
+  background: linear-gradient(90deg,#c9a227,#f5d76e);
+  color: #000;
+
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.map-btn:hover {
+  box-shadow: 0 0 15px rgba(245,215,110,0.5);
+  transform: translateY(-3px);
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+  .map-card {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #050505;
+    color: #fff;
+    padding-top: 80px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+/* SUBTLE GOLD GLOW */
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(245,215,110,0.08), transparent);
+    top: -150px;
+    right: -100px;
+    z-index: 0;
+}
+
+/* CONTAINER GRID */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    padding: 0 6%;
+    position: relative;
+    z-index: 1;
+}
+
+/* ================= LOGO ================= */
+.footer-logo {
+    height: 70px;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.footer-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px var(--gold2));
+}
+
+/* ================= TEXT ================= */
+.footer-col p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ================= HEADINGS ================= */
+.footer-col h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--gold2);
+    position: relative;
+}
+
+/* underline effect */
+.footer-col h3::after {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--gold2);
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+}
+
+/* ================= LINKS ================= */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #ccc;
+    font-size: 14px;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.footer-col ul li a:hover {
+    color: var(--gold2);
+    transform: translateX(5px);
+}
+
+/* ================= CONTACT INFO ================= */
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    color: #ccc;
+    font-size: 14px;
+}
+
+.footer-contact i {
+    color: var(--gold2);
+    font-size: 16px;
+    min-width: 20px;
+}
+
+/* clickable links */
+.footer-contact a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-contact a:hover {
+    color: var(--gold2);
+}
+
+/* ================= SOCIAL ICONS ================= */
+.footer-socials {
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.footer-socials a {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+/* HOVER EFFECT */
+.footer-socials a:hover {
+    background: linear-gradient(90deg,var(--gold1),var(--gold2));
+    color: #000;
+    transform: translateY(-6px) scale(1.1);
+    box-shadow: 0 0 15px rgba(245,215,110,0.6);
+}
+
+/* ================= FOOTER BOTTOM ================= */
+.footer-bottom {
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 14px;
+    color: #aaa;
+}
