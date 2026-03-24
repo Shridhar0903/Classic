@@ -19,6 +19,9 @@ body{
     --dark:#0a0a0a;
 }
 
+
+
+
 /* ===== NAVBAR ===== */
 .navbar{
     position:fixed;
@@ -128,6 +131,7 @@ body{
     box-shadow:0 0 18px rgba(245,215,110,0.5);
 }
 
+/* ============Hero section========= */
 
 .contact-hero {
   position: relative;
@@ -160,6 +164,12 @@ body{
 .hero-content h1 {
   font-size: 42px;
   margin-bottom: 10px;
+}
+
+.hero-content h1 span {
+  background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
 .hero-content p {

@@ -71,3 +71,42 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// =====================why section================
+
+const track = document.querySelector(".why-track");
+const slides1 = document.querySelectorAll(".why-item");
+const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
+const bar = document.querySelector(".why-bar");
+
+let index = 0;
+const total = slides1.length;
+
+/* UPDATE FUNCTION */
+function updateSlider() {
+  track.style.transform = `translateX(-${index * 100}%)`;
+  bar.style.width = ((index + 1) / total) * 100 + "%";
+}
+
+/* NEXT */
+nextBtn.addEventListener("click", () => {
+  if (index < total - 1) {
+    index++;
+    updateSlider();
+  }
+});
+
+/* PREV */
+prevBtn.addEventListener("click", () => {
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
+});
+
+/* OPTIONAL: AUTO SLIDE (premium feel) */
+setInterval(() => {
+  index = (index + 1) % total;
+  updateSlider();
+}, 5000);
