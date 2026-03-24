@@ -110,3 +110,20 @@ setInterval(() => {
   index = (index + 1) % total;
   updateSlider();
 }, 5000);
+
+// =================================Services Page =================================
+const services = document.querySelectorAll(".service-box");
+
+services.forEach((box) => {
+  box.querySelector(".service-header").addEventListener("click", () => {
+    // close all
+    services.forEach((b) => {
+      b.classList.remove("active");
+      b.querySelector(".toggle-icon").textContent = "+";
+    });
+
+    // open clicked
+    box.classList.add("active");
+    box.querySelector(".toggle-icon").textContent = "−";
+  });
+});

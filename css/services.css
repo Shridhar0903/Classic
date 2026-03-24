@@ -1,3 +1,4 @@
+/* ===== RESET ===== */
 *{
     margin:0;
     padding:0;
@@ -6,9 +7,9 @@
 }
 
 body{
-    background:#ffffff;
-     
-    /* background:linear-gradient(90deg,#0a0a0ae6,#1d1800); */
+    /* background:#ffffff;
+     */
+    background:linear-gradient(90deg,#0a0a0ae6,#1d1800);
 }
 
 /* BASE */
@@ -56,8 +57,6 @@ body{
     --gold3:#fff3b0;
     --dark:#0a0a0a;
 }
-
-
 
 
 /* ===== NAVBAR ===== */
@@ -169,326 +168,338 @@ body{
     box-shadow:0 0 18px rgba(245,215,110,0.5);
 }
 
-/* ============Hero section========= */
+/* ==========================================Hero Section================================ */
 
-.contact-hero {
-  position: relative;
-  height: 80vh;
-  background: url("../images/contact.png") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-align: center;
-  overflow: hidden;
+.services-hero{
+    height:70vh;
+    position:relative;
+    background:url("https://ucpowder.com/wp-content/uploads/2023/11/What-is-powder-coating.webp") center/cover no-repeat;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
+.hero-overlay{
+    position:absolute;
+    inset:0;
 
-/* Overlay */
-.hero-overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.6), rgb(0, 7, 14));
-  top: 0;
-  left: 0;
+    background:
+    linear-gradient(
+        to top,
+        #050505 0%,
+        rgba(0,0,0,0.95) 20%,
+        rgba(0,0,0,0.7) 50%,
+        transparent 100%
+    );
+
+    backdrop-filter:blur(3px);
 }
-
-/* Content */
-.hero-content {
-  position: relative;
-  z-index: 2;
+/* CONTENT */
+.services-hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:#fff;
+    max-width:700px;
+    padding:20px;
 }
-
-.hero-content h1 {
-  font-size:56px;
+/* HEADING */
+.services-hero-content h1{
+    font-size:56px;
     margin-bottom:15px;
     font-weight:700;
 }
 
-.hero-content h1 span {
-  background:linear-gradient(90deg,var(--gold1),var(--gold3));
+/* GOLD TEXT */
+.services-hero-content h1 span{
+    background:linear-gradient(90deg,var(--gold1),var(--gold3));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-.hero-content p {
-  font-size: 16px;
+/* TEXT */
+.services-hero-content p{
+    font-size:18px;
+    color:#ddd;
+    line-height:1.6;
 }
 
-/* 🔥 Slanted Bottom Effect */
-.contact-hero::after {
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: white;
+/* RESPONSIVE */
+/* @media(max-width:768px){
+    .services-hero{
+        height:60vh;
+    }
 
-  /* This creates the slant */
-  clip-path: polygon(0 70%, 100% 40%, 100% 100%, 0% 100%);
+    .services-hero-content h1{
+        font-size:34px;
+    }
 
-}
-
-
-/* =============================Contact form ============================== */
-
-.contact-wrapper {
-  position: relative;
-  margin-top: -120px; /* 🔥 this creates overlap */
-  padding: 0 6%;
-  z-index: 5; 
-}
-
-/* ================= CARD ================= */
-/* .contact-card {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-left: 30px;
-    margin-right: 30px;
-   margin-bottom: 30px;
-   height: 70vh;
-
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    .services-hero-content p{
+        font-size:15px;
+    }
 } */
 
-.contact-card {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  background: #fff;
-  border-radius: 12px;
-  padding: 30px;              /* ✅ OUTER PADDING (main fix) */
-  gap: 30px;                  /* space between left & right */
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-  margin-bottom: 30px;
+/* ================= SPLIT SECTION ================= */
+.services-split{
+    display:flex;
+    gap:80px;
+    padding:120px 8%;
+    background:#050505;
+    color:#fff;
 }
 
-/* ================= LEFT SIDE ================= */
-.contact-info {
-  background: #f7f7f7;
-  padding: 60px 60px;
+/* LEFT SIDE (BIG TEXT) */
+.split-left{
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.contact-info h2 {
-  margin-bottom: 10px;
+.split-left h2{
+    font-size:70px;
+    line-height:1.1;
+    font-weight:700;
+    letter-spacing:2px;
 }
 
-.contact-info p {
-  color: #666;
-  margin-bottom: 25px;
+/* GOLD WORD */
+.split-left span{
+    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.info-box {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+/* RIGHT SIDE */
+.split-right{
+    flex:2;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
 }
 
-.info-box i {
-  width: 45px;
-  height: 45px;
-  background:linear-gradient(90deg,var(--dark),var(--dark));
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-.contact-socials {
-  margin-top: 50px;
-  display: flex;
-  gap: 10px;
+/* ITEM */
+.split-item{
+    position:relative;
+    padding-left:25px;
+    border-left:2px solid rgba(255,255,255,0.1);
+    transition:0.4s ease;
 }
 
-.contact-socials a {
-  width: 40px;        /* equal width */
-  height: 40px;       /* equal height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
- background:linear-gradient(90deg,var(--gold1),var(--gold1));
-  color: #fff;
-
-  border-radius: 50%; /* makes perfect circle */
-  text-decoration: none;
-
-  transition: 0.3s;
+/* GOLD LINE ANIMATION */
+.split-item::before{
+    content:"";
+    position:absolute;
+    left:-2px;
+    top:0;
+    width:2px;
+    height:0%;
+    background:linear-gradient(var(--gold1),var(--gold3));
+    transition:0.4s;
 }
 
-/* ================= FORM ================= */
-.contact-form {
-  padding: 40px;
-}
-
-.contact-form h2 {
-  margin-bottom: 20px;
-}
-
-.input-row {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background: #f1f1f1;
-  border-radius: 6px;
-  outline: none;
-}
-
-textarea {
-  height: 120px;
-  margin-top: 10px;
-}
-
-button {
-  margin-top: 15px;
-  width: 100%;
-  padding: 12px;
-  border: none;
-  background:linear-gradient(90deg,var(--gold1),var(--gold1));
-  color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.contact-socials a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-/* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .contact-card {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-wrapper {
-    margin-top: -80px;
-  }
-}
-
-
-/* ================= MAP SECTION ================= */
-.map-section {
-  padding: 100px 6%;
-  background: #050505;
-  color: #fff;
-  text-align: center;
-}
-
-/* HEADER */
-.map-header {
-  margin-bottom: 50px;
-}
-
-.map-header .tag {
-  color: #f5d76e;
-  letter-spacing: 2px;
-  font-size: 14px;
-}
-
-.map-header h2 {
-  font-size: 38px;
-  margin: 10px 0;
-}
-
-.map-header h2 span {
-  background: linear-gradient(90deg,#c9a227,#fff3b0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.map-header p {
-  color: #aaa;
-}
-
-/* ================= MAP WRAPPER ================= */
-.map-wrapper {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-}
-
-/* MAP */
-.map-wrapper iframe {
-  width: 100%;
-  height: 450px;
-  border: 0;
-  filter: contrast(1.05) brightness(1.05);
-}
-
-/* ================= FLOATING CARD ================= */
-.map-card {
-  position: absolute;
-  bottom: 30px;
-  left: 30px;
-
-  background: rgba(0,0,0,0.85);
-  backdrop-filter: blur(10px);
-
-  padding: 25px;
-  border-radius: 12px;
-
-  text-align: left;
-  max-width: 280px;
-
-  border: 1px solid rgba(255,255,255,0.1);
+/* TITLE */
+.split-item h3{
+    font-size:22px;
+    margin-bottom:8px;
+    transition:0.3s;
 }
 
 /* TEXT */
-.map-card h3 {
-  margin-bottom: 10px;
-  color: #f5d76e;
+.split-item p{
+    color:#aaa;
+    line-height:1.7;
 }
 
-.map-card p {
-  font-size: 14px;
-  margin-bottom: 8px;
-  color: #ddd;
+/* HOVER EFFECT */
+.split-item:hover::before{
+    height:100%;
 }
 
-.map-card i {
-  color: #f5d76e;
-  margin-right: 8px;
+.split-item:hover h3{
+    color:var(--gold2);
 }
 
-/* BUTTON */
-.map-btn {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 10px 20px;
-
-  background: linear-gradient(90deg,#c9a227,#f5d76e);
-  color: #000;
-
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: 0.3s;
+.split-item:hover{
+    transform:translateX(6px);
 }
 
-.map-btn:hover {
-  box-shadow: 0 0 15px rgba(245,215,110,0.5);
-  transform: translateY(-3px);
-}
-
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media(max-width:768px){
-  .map-card {
-    position: static;
-    margin-top: 20px;
-  }
+    .services-split{
+        flex-direction:column;
+        gap:40px;
+    }
+
+    .split-left h2{
+        font-size:42px;
+        text-align:center;
+    }
+}
+/*======================================= Main Services================================== */
+.services-main{
+    background:#050505;
+    padding:120px 8%;
+    color:#fff;
 }
 
-/* ================= FOOTER ================= */
+/* TITLE */
+.services-title{
+    text-align:center;
+    margin-bottom:80px;
+}
+
+.services-title h2{
+    font-size:42px;
+}
+
+.services-title span{
+    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* PANEL */
+.service-panel{
+    display:flex;
+    align-items:center;
+    gap:30px;
+    margin-bottom:80px;
+
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:20px;
+    overflow:hidden;
+
+    transition:0.4s ease;
+}
+
+/* REVERSE */
+.service-panel.reverse{
+    flex-direction:row-reverse;
+}
+
+/* IMAGE */
+.service-img{
+    flex:1.85;
+    height:430px;
+    overflow:hidden;
+}
+
+.service-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:0.5s;
+}
+
+/* CONTENT */
+.service-content{
+    flex:1;
+    padding:40px;
+}
+
+.service-content h3{
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.service-content p{
+    color:#bbb;
+    margin-bottom:20px;
+    line-height:1.6;
+}
+
+/* LIST */
+.service-content ul{
+    list-style:none;
+}
+
+.service-content li{
+    margin-bottom:10px;
+    position:relative;
+    padding-left:20px;
+    color:#ccc;
+}
+
+/* GOLD BULLET */
+.service-content li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:6px;
+    height:6px;
+    background:var(--gold2);
+    border-radius:50%;
+}
+
+/* HOVER EFFECT */
+.service-panel:hover{
+    transform:translateY(-6px);
+    border-color:rgba(245,215,110,0.4);
+    box-shadow:0 0 30px rgba(245,215,110,0.15);
+}
+
+.service-panel:hover img{
+    transform:scale(1.08);
+}
+
+/* CTA BUTTON */
+.service-cta{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    margin-top:270px;
+    margin-right: 70px;
+    padding:10px 22px;
+
+    border:1px solid var(--gold2);
+    border-radius:30px;
+
+    color:var(--gold2);
+    text-decoration:none;
+    font-size:14px;
+
+    transition:0.4s ease;
+}
+
+/* ICON ANIMATION */
+.service-cta i{
+    transition:0.3s;
+}
+
+/* HOVER */
+.service-cta:hover{
+    background:linear-gradient(90deg,var(--gold1),var(--gold2));
+    color:#000;
+    box-shadow:0 0 15px rgba(245,215,110,0.5);
+}
+
+.service-cta:hover i{
+    transform:translateX(5px);
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .service-panel{
+        flex-direction:column;
+    }
+
+    .service-panel.reverse{
+        flex-direction:column;
+    }
+
+    .service-img{
+        width:100%;
+    }
+}
+
+
+
+
+
+/* ==========================================Footer==================================== */
 .footer {
     background: #050505;
     color: #fff;

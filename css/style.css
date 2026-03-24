@@ -12,6 +12,44 @@ body{
     background:linear-gradient(90deg,#0a0a0ae6,#1d1800);
 }
 
+/* BASE */
+.reveal,
+.reveal-left,
+.reveal-right,
+.reveal-zoom{
+    opacity:0;
+    transition:all 0.8s ease;
+}
+
+/* DEFAULT (BOTTOM TO TOP) */
+.reveal{
+    transform:translateY(60px);
+}
+
+/* LEFT */
+.reveal-left{
+    transform:translateX(-80px);
+}
+
+/* RIGHT */
+.reveal-right{
+    transform:translateX(80px);
+}
+
+/* ZOOM */
+.reveal-zoom{
+    transform:scale(0.8);
+}
+
+/* ACTIVE (WHEN VISIBLE) */
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active,
+.reveal-zoom.active{
+    opacity:1;
+    transform:translate(0,0) scale(1);
+}
+
 /* ===== COLORS ===== */
 :root{
     --gold1:#c9a227;
@@ -194,13 +232,10 @@ body{
     top:50%;
     left:50%;
     transform:translate(-50%, -50%);
-
     z-index:2; /* highest layer */
-
     color:#fff;
     text-align:center;
     max-width:700px;
-
     animation:luxuryReveal 1.2s cubic-bezier(0.22,1,0.36,1);
 }
 
@@ -327,7 +362,7 @@ body{
 }
 
 /* ===== RESPONSIVE ===== */
-@media(max-width:768px){
+/* @media(max-width:768px){
 
     .navbar{
         padding:10px 20px;
@@ -348,7 +383,7 @@ body{
     .hero-content p{
         font-size:15px;
     }
-}
+} */
 
 /* ===== SOCIAL ICONS ===== */
 .social-icons{
@@ -1083,7 +1118,7 @@ body{
 }
 
 /* ================= FOOTER ================= */
-/* ================= FOOTER ================= */
+
 .footer {
     background: #050505;
     color: #fff;
@@ -1282,3 +1317,4 @@ body{
         justify-content: center;
     }
 }
+
