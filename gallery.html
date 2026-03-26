@@ -48,12 +48,12 @@
 
 
 <section class="gallery-section">
-    <div class="gallery-header">
+    <div class="gallery-header reveal">
         <h2>Our <span>Gallery</span></h2>
     </div>
 
     <!-- FILTER BUTTONS -->
-    <div class="filter-btns">
+    <div class="filter-btns reveal">
         <button class="active" data-filter="all">All</button>
         <button data-filter="multi">Multi-Colour</button>
         <button data-filter="sand">Sand Blasting</button>
@@ -61,7 +61,7 @@
     </div>
 
 <!-- PHOTO GALLERY -->
-<div class="gallery-grid" id="photo-gallery">
+<div class="gallery-grid reveal" id="photo-gallery">
 
     <!-- Multi Colour -->
     <div class="gallery-item" data-category="multi">
@@ -77,7 +77,7 @@
         <div class="overlay"><span class="img-name">Multi Colour 3</span></div>
     </div>
       <div class="gallery-item" data-category="multi">
-        <img src="images/Bg1.jpg" alt="Multi Colour 4">
+        <img src="images/IMG_8044.JPG.jpeg" alt="Multi Colour 4">
         <div class="overlay"><span class="img-name">Multi Colour 4</span></div>
     </div>
 
@@ -118,7 +118,7 @@
 
     <!-- VIDEO GALLERY -->
     <h3 style="text-align:center; margin:60px 0 30px;">Videos</h3>
-    <div class="gallery-grid" id="video-gallery">
+    <div class="gallery-grid reveal" id="video-gallery">
         <div class="gallery-item" data-category="multi">
             <video src="videos/vedio1.mp4"></video>
             <span class="video-label">Video</span>
@@ -136,7 +136,7 @@
 
 
 <!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
+<div class="lightbox " id="lightbox">
     <span class="close" id="lightbox-close">&times;</span> <!-- Close Button -->
     <img src="" alt="Gallery View" id="lightbox-img">
     <video src="" id="lightbox-video" controls style="display:none;"></video>
@@ -144,13 +144,13 @@
 
 
 
-<section class="featured-projects">
-    <div class="section-header">
+<section class="featured-projects ">
+    <div class="section-header reveal">
         <h2>Featured <span>Projects</span></h2>
         <p>Showcasing our finest coating and surface treatment work with precision and style.</p>
     </div>
 
-    <div class="projects-grid">
+    <div class="projects-grid reveal">
         <div class="project-card">
             <img src="images/Project1.jpeg" alt="Project 1">
             <div class="project-info">
@@ -177,7 +177,7 @@
 
 
 <!-- FOOTER -->
-<footer class="footer ">
+<footer class="footer reveal">
     <div class="footer-container">
 
         <!-- ABOUT -->
@@ -246,8 +246,14 @@
         © 2026 Classic Surface Coating Technology. All Rights Reserved.
     </div>
 </footer>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/919403118661" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+</a>
 <script src="js/gallery.js"></script>
 <script src="js/script.js"></script>
+<script src="js/scroll.js"></script>
     
 </body>
 </html>

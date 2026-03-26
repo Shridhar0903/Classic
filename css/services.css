@@ -191,8 +191,6 @@ body{
         rgba(0,0,0,0.7) 50%,
         transparent 100%
     );
-
-    backdrop-filter:blur(3px);
 }
 /* CONTENT */
 .services-hero-content{
@@ -212,7 +210,7 @@ body{
 
 /* GOLD TEXT */
 .services-hero-content h1 span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold1));
+    background:linear-gradient(90deg,var(--gold1),var(--gold3));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -625,6 +623,32 @@ body{
     }
 }
 
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 
 
 

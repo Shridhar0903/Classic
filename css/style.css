@@ -186,13 +186,10 @@ body{
     height:100%;
     z-index:0; /* lowest layer */
     
-
     opacity:0;
     transition:opacity 1s ease-in-out;
-
     display:flex;
     align-items:center;
-
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -228,7 +225,7 @@ body{
     );
 
     /* OPTIONAL: keep blur safely */
-     backdrop-filter: blur(3px); 
+     /* backdrop-filter: blur(3px);  */
 }
 
 /* CONTENT */
@@ -241,9 +238,8 @@ body{
     color:#fff;
     text-align:center;
     max-width:700px;
-    animation:luxuryReveal 1.2s cubic-bezier(0.22,1,0.36,1);
+    
 }
-
 
 /* HEADING */
 .hero-content h1{
@@ -259,20 +255,6 @@ body{
     margin-bottom:25px;
     line-height:1.6;
 }
-
-/* STAGGER TEXT */
-.hero-content h1 span,
-.hero-content p span{
-    display:inline-block;
-    opacity:0;
-    transform:translateY(30px);
-    animation:staggerUp 0.8s forwards;
-}
-
-.hero-content h1 span:nth-child(1){animation-delay:0.2s;}
-.hero-content h1 span:nth-child(2){animation-delay:0.4s;}
-.hero-content h1 span:nth-child(3){animation-delay:0.6s;}
-.hero-content p span{animation-delay:0.8s;}
 
 /* BUTTONS */
 .hero-btns{
@@ -333,37 +315,13 @@ body{
     border-radius:50%;
     background:#ccc;
     cursor:pointer;
+    margin-top: -100px;
     transition:0.3s;
 }
 
 .dot.active{
     background:var(--gold2);
     box-shadow:0 0 8px var(--gold2);
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes luxuryReveal{
-    0%{
-        opacity:0;
-        transform:translateY(60px) scale(0.95);
-        filter:blur(10px);
-    }
-    50%{
-        opacity:0.6;
-        filter:blur(4px);
-    }
-    100%{
-        opacity:1;
-        transform:translateY(0) scale(1);
-        filter:blur(0);
-    }
-}
-
-@keyframes staggerUp{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 /* ===== RESPONSIVE ===== */
@@ -1131,6 +1089,32 @@ transform:translateX(-50%);
 .contact-btns .btn.secondary:hover {
     background: linear-gradient(90deg, var(--gold1), var(--gold2));
     color: #000;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: #fff;
+    font-size: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 /* ================= FOOTER ================= */
 
