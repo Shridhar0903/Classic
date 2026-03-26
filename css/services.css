@@ -7,9 +7,9 @@
 }
 
 body{
-    /* background:#ffffff;
-     */
-    background:linear-gradient(90deg,#0a0a0ae6,#1d1800);
+     background:#ffffff;
+    
+    /* background:linear-gradient(90deg,#0a0a0ae6,#1d1800); */
 }
 
 /* BASE */
@@ -212,7 +212,7 @@ body{
 
 /* GOLD TEXT */
 .services-hero-content h1 span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -244,16 +244,42 @@ body{
     display:flex;
     gap:80px;
     padding:120px 8%;
-    background:#050505;
-    color:#fff;
+    background:#ffffff;
+    color:var(--dark);
+    position:relative;
+    overflow:hidden;
 }
 
-/* LEFT SIDE (BIG TEXT) */
+/* ================= BACKGROUND GLOW ================= */
+.services-split::before{
+    content:"";
+    position:absolute;
+    width:450px;
+    height:450px;
+    background:radial-gradient(circle, rgba(201,162,39,0.12), transparent 70%);
+    top:-120px;
+    right:-120px;
+    z-index:0;
+}
+
+/* ================= LEFT SIDE ================= */
 .split-left{
     flex:1;
     display:flex;
     align-items:center;
     justify-content:center;
+    position:relative;
+}
+
+/* BIG BACKGROUND TEXT */
+.split-left::before{
+    content:"SERVICES";
+    position:absolute;
+    font-size:120px;
+    font-weight:800;
+    color:rgba(0,0,0,0.04);
+    letter-spacing:10px;
+    z-index:0;
 }
 
 .split-left h2{
@@ -261,29 +287,34 @@ body{
     line-height:1.1;
     font-weight:700;
     letter-spacing:2px;
+    position:relative;
+    z-index:2;
 }
 
-/* GOLD WORD */
 .split-left span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold2));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-/* RIGHT SIDE */
+/* ================= RIGHT SIDE ================= */
 .split-right{
     flex:2;
     display:flex;
     flex-direction:column;
-    gap:40px;
+    gap:45px;
+    position:relative;
+    z-index:2;
 }
 
-/* ITEM */
+/* ================= ITEM ================= */
 .split-item{
     position:relative;
-    padding-left:25px;
-    border-left:2px solid rgba(255,255,255,0.1);
+    padding:30px 25px 30px 30px;
+    border-left:2px solid rgba(0,0,0,0.08);
     transition:0.4s ease;
+    border-radius:8px;
+    background:transparent;
 }
 
 /* GOLD LINE ANIMATION */
@@ -294,53 +325,150 @@ body{
     top:0;
     width:2px;
     height:0%;
-    background:linear-gradient(var(--gold1),var(--gold3));
+    background:linear-gradient(var(--gold1),var(--gold2));
     transition:0.4s;
 }
 
-/* TITLE */
+/* DIVIDER */
+.split-item:not(:last-child){
+    border-bottom:1px solid #eee;
+}
+
+/* ================= SMALL TAG ================= */
+.tag{
+    font-size:12px;
+    letter-spacing:2px;
+    color:var(--gold1);
+    font-weight:600;
+    display:block;
+    margin-bottom:8px;
+}
+
+/* ================= TITLE ================= */
 .split-item h3{
     font-size:22px;
-    margin-bottom:8px;
+    margin-bottom:10px;
+    transition:0.3s;
+    display:flex;
+    align-items:center;
+}
+
+/* ICON STYLE */
+.split-item h3 i{
+    background:rgba(201,162,39,0.1);
+    padding:10px;
+    border-radius:50%;
+    font-size:14px;
+    margin-right:12px;
+    color:var(--gold1);
     transition:0.3s;
 }
 
-/* TEXT */
-.split-item p{
-    color:#aaa;
-    line-height:1.7;
+/* TITLE LINE */
+.split-item h3::after{
+    content:"";
+    display:block;
+    width:40px;
+    height:2px;
+    margin-top:8px;
+    background:linear-gradient(90deg,var(--gold1),transparent);
+    transition:0.3s;
 }
 
-/* HOVER EFFECT */
+/* ================= TEXT ================= */
+.split-item p{
+    color:#777575;
+    line-height:1.8;
+    max-width:520px;
+}
+
+/* ================= HOVER ================= */
+.split-item:hover{
+    transform:translateX(8px);
+    background:rgba(201,162,39,0.05);
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
 .split-item:hover::before{
     height:100%;
 }
 
 .split-item:hover h3{
-    color:var(--gold2);
+    color:var(--gold1);
 }
 
-.split-item:hover{
-    transform:translateX(6px);
+.split-item:hover h3 i{
+    background:var(--gold1);
+    color:#000;
 }
 
-/* RESPONSIVE */
+.split-item:hover h3::after{
+    width:70px;
+}
+
+/* ================= ANIMATION ================= */
+.split-item{
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeUp 0.8s ease forwards;
+}
+
+.split-item:nth-child(1){ animation-delay:0.2s; }
+.split-item:nth-child(2){ animation-delay:0.4s; }
+.split-item:nth-child(3){ animation-delay:0.6s; }
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* ================= CTA BUTTON ================= */
+.split-cta{
+    margin-top:20px;
+}
+
+.btn-gold{
+    padding:12px 28px;
+    border:1px solid var(--gold1);
+    color:var(--gold1);
+    text-decoration:none;
+    transition:0.3s;
+    display:inline-block;
+}
+
+.btn-gold:hover{
+    background:var(--gold1);
+    color:#000;
+}
+
+/* ================= RESPONSIVE ================= */
 @media(max-width:768px){
+
     .services-split{
         flex-direction:column;
-        gap:40px;
+        gap:50px;
+    }
+
+    .split-left::before{
+        font-size:70px;
     }
 
     .split-left h2{
         font-size:42px;
         text-align:center;
     }
+
+    .split-item{
+        padding:25px 20px;
+    }
 }
 /*======================================= Main Services================================== */
 .services-main{
-    background:#050505;
+    background:#ffffff;
     padding:120px 8%;
-    color:#fff;
+    color:var(--dark);
 }
 
 /* TITLE */
@@ -354,7 +482,7 @@ body{
 }
 
 .services-title span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -366,7 +494,7 @@ body{
     gap:30px;
     margin-bottom:80px;
 
-    background:rgba(255,255,255,0.03);
+    background:rgba(0, 0, 0, 0.807);
     border:1px solid rgba(255,255,255,0.08);
     border-radius:20px;
     overflow:hidden;
@@ -400,12 +528,13 @@ body{
 }
 
 .service-content h3{
-    font-size:26px;
+    font-size:24px;
     margin-bottom:15px;
+    color: #ffffff;
 }
 
 .service-content p{
-    color:#bbb;
+    color:#e4dcdc;
     margin-bottom:20px;
     line-height:1.6;
 }
@@ -457,7 +586,8 @@ body{
     border:1px solid var(--gold2);
     border-radius:30px;
 
-    color:var(--gold2);
+    color:var(--dark);
+       background:linear-gradient(90deg,var(--gold1),var(--gold2));
     text-decoration:none;
     font-size:14px;
 

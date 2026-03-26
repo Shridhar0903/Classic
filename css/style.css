@@ -9,7 +9,7 @@
 body{
     /* background:#ffffff;
      */
-    background:linear-gradient(90deg,#0a0a0ae6,#1d1800);
+    background:#fffdf0;
 }
 
 /* BASE */
@@ -55,8 +55,11 @@ body{
     --gold1:#c9a227;
     --gold2:#f5d76e;
     --gold3:#fff3b0;
-    --dark:#0a0a0a;
+    --dark:#1a1a1a; /* dark text color */
+    --secondary:#555555; /* secondary text */
+    --section-bg:#fffdf0; /* light cream background */
 }
+
 
 
 /* ===== NAVBAR ===== */
@@ -175,12 +178,14 @@ body{
     overflow:hidden;  
 }
 
+
 /* SLIDES */
 .slide{
     position:absolute;
     width:100%;
     height:100%;
     z-index:0; /* lowest layer */
+    
 
     opacity:0;
     transition:opacity 1s ease-in-out;
@@ -493,10 +498,13 @@ body{
     }
 }
 
+
+
 /* ===================== ABOUT PREMIUM ===================== */
 .about{
     padding:120px 80px;
-    background:#050505;
+    /* background:var(--section-bg); */
+    background: #ffffff;
     position:relative;
     overflow:hidden;
 }
@@ -537,7 +545,7 @@ body{
     left: -20px;
     width: 100%;
     height: 100%;
-    border: 5px solid var(--gold2);
+    border: 5px solid var(--gold1);
     z-index: 1;
     transition: all 0.5s ease;
 }
@@ -569,8 +577,9 @@ body{
 /* ================= CONTENT ================= */
 .about-content{
     width:50%;
-    color:#fff;
+    color:var(--dark);
 }
+
 
 /* TAG STYLE */
 .tag-box{
@@ -583,11 +592,11 @@ body{
 .tag-box .line{
     width:40px;
     height:2px;
-    background:var(--gold2);
+    background:var(--gold1);
 }
 
 .tag{
-    color:var(--gold2);
+    color:var(--dark);
     font-size:14px;
     letter-spacing:2px;
 }
@@ -600,7 +609,7 @@ body{
 }
 
 .about-content h2 span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(45deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -608,7 +617,7 @@ body{
 /* TEXT */
 .about-content p{
     font-size:16px;
-    color:#ccc;
+    color:#3d3c3c;
     margin-bottom:15px;
     line-height:1.7;
 }
@@ -634,7 +643,7 @@ body{
 
 .about-btn:hover{
     transform:translateY(-3px);
-    box-shadow:0 0 15px rgba(245,215,110,0.5);
+    box-shadow:0 0 15px rgba(62, 55, 27, 0.668);
 }
 
 /* EXPERIENCE BADGE */
@@ -683,7 +692,7 @@ body{
 /* ===================== SERVICES SECTION ===================== */
 .services {
   padding: 100px 6%;
-  background: #050505;
+  background: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -710,7 +719,7 @@ body{
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
-  color: var(--gold2);
+  color: var(--dark);
   margin-bottom: 12px;
   
 }
@@ -720,18 +729,18 @@ body{
      font-size:42px;
     line-height:1.3;
     margin-bottom:20px;
-    color: #fff;
+    color: var(--dark);
 }
 
 .services-header h2 span {
-  background: linear-gradient(90deg,var(--gold1),var(--gold3));
+  background: linear-gradient(90deg,var(--gold1),var(--gold1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .services-header p {
   font-size: 15px;
-  color: #aaa;
+  color: #686868;
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.7;
@@ -839,7 +848,7 @@ body{
 
 /* richer overlay */
 .panel:hover::after {
-  background: rgba(0,0,0,0.75);
+  background: rgba(0, 0, 0, 0.393);
 }
 
 /* ================= BUTTON ================= */
@@ -905,218 +914,224 @@ body{
 /* ============================================================================================================= */
 /* ================= WHY SECTION ================= */
 
-.why {
-    padding:100px 6%;
-    background:#0a0a0a;
-    color:#fff;
-    position:relative;
-    overflow:hidden;
+.solutions{
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8%;
+background:#f8fbff;
+position:relative;
+overflow:hidden;
 }
 
-/* subtle radial glow for premium feel */
-.why::before {
-    content:"";
-    position:absolute;
-    width:400px;
-    height:400px;
-    background:radial-gradient(circle, rgba(245,215,110,0.05), transparent);
-    top:-50px;
-    left:-50px;
-    z-index:0;
+.solutions-text{
+width:40%;
 }
 
-/* HEADER */
-.why-header {
-    text-align:center;
-    margin-bottom:70px;
-    position:relative;
-    z-index:1;
+.solutions-text h2{
+font-size:42px;
+color:var(--dark);
+margin-bottom:20px;
 }
 
-.why-header .tag {
-    color:var(--gold2);
-    font-size:14px;
-    letter-spacing:2px;
-    font-weight:600;
-    margin-bottom:10px;
-    display:inline-block;
-}
-
-.why-header h2 {
-    font-size:38px;
-    margin:10px 0;
-    font-weight:700;
-    line-height:1.2;
-}
-
-.why-header h2 span {
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+.solutions-text h2 span {
+ background:linear-gradient(45deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
-.why-header p {
-    color:#aaa;
-    font-size:16px;
-    max-width:700px;
-    margin:0 auto;
-    line-height:1.6;
+.solutions-text p{
+color:var(--secondary);
+font-size:17px;
+line-height:1.7;
+margin-bottom:30px;
+max-width:450px;
 }
 
-/* ================= GRID ================= */
-.why-grid {
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:40px;
-    align-items:center;
-    position:relative;
-    z-index:1;
+/* ARROWS */
+
+.arrows button{
+width:42px;
+height:42px;
+border-radius:50%;
+border:1px solid #ccc;
+background:white;
+margin-right:10px;
+cursor:pointer;
+font-size:18px;
+transition:0.3s;
 }
 
-/* ITEM */
-.why-item {
-    display:flex;
-    align-items:flex-start;
-    gap:20px;
-    padding:25px;
-    border-left:3px solid var(--gold2);
-    transition:0.3s ease;
-    background:rgba(255,255,255,0.02);
-    border-radius:8px;
+.arrows button:hover{
+background:var(--gold1);
+color:white;
+border-color:var(--dark);
 }
 
-.why-item i {
-    font-size:28px;
-    color:var(--gold2);
-    min-width:40px;
-    transition:0.3s;
+/* RIGHT BLUE BOX */
+
+.solutions-slider{
+width:60%;
+background:linear-gradient(135deg,var(--gold1),var(--gold1));
+border-radius:60px 0 0 60px;
+padding:50px 0;
+overflow:hidden;
 }
 
-/* TEXT */
-.why-item h3 {
-    font-size:20px;
-    margin-bottom:6px;
-    font-weight:600;
-    color:#fff;
-    transition:0.3s;
+/* SCROLL TRACK */
+
+.slider-track{
+display:flex;
+gap:30px;
+width:max-content;
+animation:scrollSolutions 25s linear infinite;
 }
 
-.why-item p {
-    font-size:14px;
-    color:#ccc;
-    line-height:1.6;
-    transition:0.3s;
+/* CARD */
+
+.solution-card{
+width:280px;
+background:white;
+border-radius:18px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0, 0, 0, 0);
+transition:0.3s;
 }
 
-/* HOVER EFFECT */
-.why-item:hover {
-    background:rgba(245,215,110,0.05);
-    transform:translateX(5px);
+.solution-card:hover{
+transform:translateY(-8px);
 }
 
-.why-item:hover i {
-    transform:scale(1.2);
-    color:var(--gold1);
+/* IMAGE */
+
+.solution-card img{
+width:100%;
+height:180px;
+object-fit:cover;
 }
 
-.why-item:hover h3 {
-    color:var(--gold1);
+/* CARD TEXT */
+
+.card-content{
+padding:20px;
+z-index: 2;
 }
 
-.why-item:hover p {
-    color:#fff;
+.card-content h3{
+color:var(--dark);
+margin-bottom:8px;
 }
 
-/* RESPONSIVE */
-@media(max-width:1024px) {
-    .why-grid {
-        grid-template-columns:1fr;
-    }
+.card-content p{
+font-size:14px;
+color:var(--secondary);
+margin-bottom:12px;
 }
 
-@media(max-width:480px) {
-    .why-header h2 {
-        font-size:28px;
-    }
-
-    .why-item h3 {
-        font-size:18px;
-    }
-
-    .why-item p {
-        font-size:13px;
-    }
+.card-content a{
+color:var(--gold1);
+text-decoration:none;
+font-weight:600;
 }
 
+/* MARQUEE ANIMATION */
+
+@keyframes scrollSolutions{
+
+0%{
+transform:translateX(0);
+}
+
+100%{
+transform:translateX(-50%);
+}
+
+}
 /* ================= CONTACT SECTION ================= */
-.contact-section{
-    position:relative;
-    min-height:60vh;
-    background:url("https://ucpowder.com/wp-content/uploads/2023/11/What-is-powder-coating.webp") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    overflow:hidden;
+.contact-section {
+    position: relative;
+    min-height: 60vh;
+    background: url("https://ucpowder.com/wp-content/uploads/2023/11/What-is-powder-coating.webp") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* DARK BASE OVERLAY */
-.contact-section::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,0.6);
+/* GOLDEN TRANSPARENT OVERLAY */
+.contact-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(69, 68, 65, 0.641); /* golden transparent shade */
+    z-index: 1;
 }
 
-/* GOLD OVERLAY */
-.contact-overlay{
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        to top,
-        #050505 0%,
-        rgba(0,0,0,0.9) 20%,
-        rgba(0,0,0,0.6) 50%,
-        transparent 100%
-    );
-}
+/* CONTENT CENTERED */
+.contact-content {
+    position: relative;
+    max-width: 700px;
+    color: #ffffff; /* dark text for better contrast on golden overlay */
+    z-index: 2;
 
-/* CONTENT */
-.contact-content{
-    position:relative;
-    max-width:700px;
-    color:#fff;
-    z-index:2;
-
-    text-align:left;
-    padding:40px;
-    margin-top: 50px;
-      margin-left: 60px;
+    text-align: center; /* center text */
+    padding: 40px;
 }
 
 /* HEADING */
-.contact-content h2{
-    font-size:42px;
-    margin-bottom:15px;
+.contact-content h2 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    line-height: 1.3;
 }
 
-.contact-content h2 span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
+.contact-content h2 span {
+    background: rgb(255, 255, 255);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* TEXT */
-.contact-content p{
-    color:#ddd;
-    margin-bottom:30px;
+.contact-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+    color: #f7f7f7; /* slightly darker for readability */
 }
 
-/* FIXED BUTTON SECTION (IMPORTANT FIX) */
-.contact-btns{
-    display:flex;
-    gap:15px;
+/* BUTTONS */
+.contact-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center; /* center buttons */
 }
 
+.contact-btns .btn.primary {
+    background: linear-gradient(90deg, var(--gold1), var(--gold2));
+    color: #000;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.contact-btns .btn.primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(245, 215, 110, 0.5);
+}
+
+.contact-btns .btn.secondary {
+    border: 2px solid var(--gold2);
+    color: var(--gold2);
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.4s;
+}
+
+.contact-btns .btn.secondary:hover {
+    background: linear-gradient(90deg, var(--gold1), var(--gold2));
+    color: #000;
+}
 /* ================= FOOTER ================= */
 
 .footer {

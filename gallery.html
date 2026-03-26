@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="css/gallery.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+
+    <div class="logo">
+        <a href="index.html">
+            <img src="images/CC.png" alt="Orbit Coating Logo">
+        </a>
+    </div>
+
+    <!-- MENU -->
+    <nav class="nav-links">
+        <a href="index.html" class="nav-item ">Home</a>
+        <a href="about.html" class="nav-item">About</a>
+        <a href="gallery.html" class="nav-item">Gallery</a>
+        <a href="services.html" class="nav-item ">Services</a>
+        <a href="contact.html" class="nav-item">Contact</a>
+    </nav>
+
+    <!-- CTA BUTTON -->
+    <a href="contact.html" class="cta-btn">Visit Now</a>
+
+</header>
+
+<!-- =================================Hero Section=============================================== -->
+ <section class="gallery-hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="gallery-hero-content">
+        <h1>Colors of <span>Innovation</span></h1>
+        <p>
+            High-performance coating and surface solutions designed for durability,
+            precision, and long-lasting results.
+        </p>
+    </div>
+</section>
+
+
+<section class="gallery-section">
+    <div class="gallery-header">
+        <h2>Our <span>Gallery</span></h2>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-btns">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="multi">Multi-Colour</button>
+        <button data-filter="sand">Sand Blasting</button>
+        <button data-filter="tank">7-Tank Process</button>
+    </div>
+
+<!-- PHOTO GALLERY -->
+<div class="gallery-grid" id="photo-gallery">
+
+    <!-- Multi Colour -->
+    <div class="gallery-item" data-category="multi">
+        <img src="images/multi1.jpg" alt="Multi Colour 1">
+        <div class="overlay"><span class="img-name">Multi Colour 1</span></div>
+    </div>
+    <div class="gallery-item" data-category="multi">
+        <img src="images/IMG_8036.JPG.jpeg" alt="Multi Colour 2">
+        <div class="overlay"><span class="img-name">Multi Colour 2</span></div>
+    </div>
+     <div class="gallery-item" data-category="multi">
+        <img src="images/Powder1.jpeg" alt="Multi Colour 3">
+        <div class="overlay"><span class="img-name">Multi Colour 3</span></div>
+    </div>
+      <div class="gallery-item" data-category="multi">
+        <img src="images/Bg1.jpg" alt="Multi Colour 4">
+        <div class="overlay"><span class="img-name">Multi Colour 4</span></div>
+    </div>
+
+    <!-- Sand Blasting -->
+    <div class="gallery-item" data-category="sand">
+        <img src="images/sand1.jfif" alt="Sand Blasting 1">
+        <div class="overlay"><span class="img-name">Sand Blasting 1</span></div>
+    </div>
+    <div class="gallery-item" data-category="sand">
+        <img src="images/sand3.jfif" alt="Sand Blasting 2">
+        <div class="overlay"><span class="img-name">Sand Blasting 2</span></div>
+    </div>
+       <div class="gallery-item" data-category="sand">
+        <img src="images/sand2.jpg" alt="Sand Blasting 3">
+        <div class="overlay"><span class="img-name">Sand Blasting 3</span></div>
+    </div>
+    <div class="gallery-item" data-category="sand">
+        <img src="images/Sand-Blasting.jpg" alt="Sand Blasting 4">
+        <div class="overlay"><span class="img-name">Sand Blasting 4</span></div>
+    </div>
+
+    <!-- 7-Tank Process -->
+    <div class="gallery-item" data-category="tank">
+        <img src="images/tank1.jpg" alt="Tank Process 1">
+        <div class="overlay"><span class="img-name">7-Tank Process 1</span></div>
+    </div>
+    <div class="gallery-item" data-category="tank">
+        <img src="images/tank2.webp" alt="7-Tank Process 2">
+        <div class="overlay"><span class="img-name">7-Tank Process 2</span></div>
+    </div>
+      <div class="gallery-item" data-category="tank">
+        <img src="images/7-tank.png" alt="7-Tank Process 2">
+        <div class="overlay"><span class="img-name">7-Tank Process 3</span></div>
+    </div>
+
+
+</div>
+
+    <!-- VIDEO GALLERY -->
+    <h3 style="text-align:center; margin:60px 0 30px;">Videos</h3>
+    <div class="gallery-grid" id="video-gallery">
+        <div class="gallery-item" data-category="multi">
+            <video src="videos/vedio1.mp4"></video>
+            <span class="video-label">Video</span>
+        </div>
+        <div class="gallery-item" data-category="sand">
+            <video src="videos/sand1.mp4" muted></video>
+            <span class="video-label">Video</span>
+        </div>
+        <div class="gallery-item" data-category="tank">
+            <video src="videos/tank1.mp4" muted></video>
+            <span class="video-label">Video</span>
+        </div>
+    </div>
+</section>
+
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close" id="lightbox-close">&times;</span> <!-- Close Button -->
+    <img src="" alt="Gallery View" id="lightbox-img">
+    <video src="" id="lightbox-video" controls style="display:none;"></video>
+</div>
+
+
+
+<section class="featured-projects">
+    <div class="section-header">
+        <h2>Featured <span>Projects</span></h2>
+        <p>Showcasing our finest coating and surface treatment work with precision and style.</p>
+    </div>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <img src="images/Project1.jpeg" alt="Project 1">
+            <div class="project-info">
+                <h3>Industrial Multi-Colour Coating</h3>
+                <p>High-quality, durable coating for heavy machinery and equipment.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="images/Project2.jpeg" alt="Project 2">
+            <div class="project-info">
+                <h3>Sand Blasting Excellence</h3>
+                <p>Surface preparation with precision and consistent results.</p>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="images/Project3.jpg" alt="Project 3">
+            <div class="project-info">
+                <h3>7-Tank Process Mastery</h3>
+                <p>Advanced coating process for long-lasting and flawless finishes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="footer ">
+    <div class="footer-container">
+
+        <!-- ABOUT -->
+        <div class="footer-col">
+            <img src="images/CC.png" class="footer-logo">
+            <p>
+                Premium powder coating & industrial finishing solutions with durability and precision.
+            </p>
+
+            <!-- SOCIAL ICONS -->
+            <div class="footer-socials">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/919999999999" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- SERVICES -->
+        <div class="footer-col">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Powder Coating</a></li>
+                <li><a href="#">Sand Blasting</a></li>
+                <li><a href="#">7 Tank Process</a></li>
+                <li><a href="#">Industrial Coating</a></li>
+            </ul>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="footer-col">
+            <h3>Contact Info</h3>
+
+            <ul class="footer-contact">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Wadmukhwadi Pune, Maharashtra, India
+                </li>
+
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="">7083255495 / 7057094498</a>
+                </li>
+
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:">sales@calssicsurfacecoating.com</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Classic Surface Coating Technology. All Rights Reserved.
+    </div>
+</footer>
+<script src="js/gallery.js"></script>
+<script src="js/script.js"></script>
+    
+</body>
+</html>

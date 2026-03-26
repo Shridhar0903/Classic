@@ -54,7 +54,9 @@ body{
     --gold1:#c9a227;
     --gold2:#f5d76e;
     --gold3:#fff3b0;
-    --dark:#0a0a0a;
+    --dark:#1a1a1a; /* dark text color */
+    --secondary:#555555; /* secondary text */
+    --section-bg:#fffdf0; /* light cream background */
 }
 
 /* ===== NAVBAR ===== */
@@ -260,8 +262,8 @@ body{
 /* ================= ELITE ABOUT ================= */
 .about-elite{
     padding:120px 8%;
-    background:#050505;
-    color:#fff;
+    background:#ffffff;
+    color:var(--dark);
     margin-top: -40px;
 }
 
@@ -280,8 +282,8 @@ body{
 }
 
 .about-left .tag{
-    color:var(--gold2);
-    font-size:13px;
+  color:var(--dark);
+    font-size:14px;
     letter-spacing:2px;
 }
 
@@ -292,7 +294,7 @@ body{
 }
 
 .about-left h2 span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -301,21 +303,22 @@ body{
 
 /* RIGHT SIDE */
 .about-right{
-    border-left:1px solid rgba(255,255,255,0.08);
+    border-left:1px solid rgba(89, 89, 89, 0.715);
     padding-left:40px;
 }
 
 /* INTRO TEXT */
 .about-right .intro{
-    font-size:20px;
-    color:#eee;
+    font-size:18px;
+    font-weight: 500;
+    color:var(--dark);
     margin-bottom:25px;
     line-height:1.7;
 }
 
 /* NORMAL TEXT */
 .about-right p{
-    color:#aaa;
+    color:var(--secondary);
     line-height:1.8;
     margin-bottom:18px;
     font-size:15px;
@@ -333,13 +336,13 @@ body{
 .about-line span{
     width:3px;
     height:100%;
-    background:linear-gradient(var(--gold1),var(--gold3));
+    background:linear-gradient(var(--gold1),var(--gold1));
     display:block;
 }
 
 /* TEXT */
 .about-line p{
-    color:#ddd;
+    color:#a1a1a1f0;
     font-size:15px;
 }
 
@@ -360,28 +363,29 @@ body{
         border-left:none;
     }
 }
-/* 🔥 TOP STRIP (RIGHT SIDE) */
+
 .about-strip{
     display:flex;
     gap:30px;
     margin-bottom:30px;
     padding-bottom:15px;
-    border-bottom:1px solid rgba(255,255,255,0.08);
+    border-bottom:1px solid rgba(4, 4, 4, 0.08);
 }
 
 .about-strip div h4{
     font-size:16px;
-    color:#fff;
+    color:#383838;
     margin-bottom:3px;
 }
 
 .about-strip div span{
-    font-size:12px;
-    color:var(--gold2);
+    font-size:14px;
+    color:var(--gold1);
+    font-weight: 700;
     letter-spacing:1px;
 }
 
-/* 🔥 UNIQUE FLOW DESIGN */
+
 .about-flow{
     position:relative;
     padding-left:30px;
@@ -395,11 +399,11 @@ body{
     top:5px;
     width:4px;
     height:80%;
-    background:linear-gradient(var(--gold1),var(--gold3));
+    background:linear-gradient(var(--gold1),var(--gold1));
     border-radius:10px;
 
     /* Glow */
-    box-shadow:0 0 12px rgba(245,215,110,0.5);
+    box-shadow:0 0 12px rgba(137, 131, 106, 0.5);
 }
 
 /* SMALL DOT AT TOP */
@@ -418,7 +422,7 @@ body{
 
 /* TEXT */
 .about-flow p{
-    color:#ddd;
+    color:#6a6969;
     line-height:1.7;
     font-size:15px;
 }
@@ -436,8 +440,8 @@ body{
 /* ================= MV SECTION ================= */
 .mv-section{
     padding:100px 6%;
-    background:#050505;
-    color:#fff;
+    background:#ffffff;
+    color:var(--dark);
     text-align:center;
 }
 
@@ -448,7 +452,7 @@ body{
 }
 
 .mv-header span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -463,7 +467,8 @@ body{
 /* CARD */
 .mv-card{
     position:relative;
-    background:#0a0a0a;
+    /* background:var(--gold3); */
+    background:linear-gradient(var(--gold3),var(--gold2));
     border-radius:12px;
     overflow:hidden;
     transition:0.4s;
@@ -484,7 +489,7 @@ body{
     position:absolute;
     inset:0;
 
-    /* 🔥 THIS controls darkness + opacity */
+    
     background:linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0.274),   /* very dark */
@@ -508,19 +513,6 @@ body{
 
     z-index:1;
 }
-
-/* GOLD THEME BACKGROUNDS */
-/* .mission-bg{
-    background:linear-gradient(135deg,#111,#1a1a1a,rgba(201,162,39,0.2));
-}
-
-.vision-bg{
-    background:linear-gradient(135deg,#111,#1a1a1a,rgba(245,215,110,0.2));
-}
-
-.values-bg{
-    background:linear-gradient(135deg,#111,#1a1a1a,rgba(201,162,39,0.25));
-} */
 
 .mission-bg{
     background:url("https://images.unsplash.com/photo-1698434156098-68e834638679?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") center/cover no-repeat;
@@ -576,14 +568,15 @@ body{
 
 .mv-content p{
     font-size:14px;
-    color:#bbb;
+    font-weight: 400;
+    color:#1a1a1a;
     line-height:1.7;
 }
 
 /* HOVER EFFECT */
 .mv-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 0 25px rgba(245,215,110,0.15);
+    box-shadow:0 0 25px rgba(70, 67, 55, 0.54);
 }
 
 /* RESPONSIVE */
@@ -593,15 +586,25 @@ body{
     }
 }
 
+/*=========================== Why================================= */
 
 .why-ultra{
     padding:140px 0;
-    background:#050505;
-    color:#fff;
+    color:var(--dark);
     position:relative;
     overflow:hidden;
     font-family:Segoe UI;
+    background:linear-gradient(180deg,#ffffff,#ffffff);
 }
+
+.why-ultra::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+    opacity:0.05;
+}
+
 
 /* HEADER */
 .why-header{
@@ -615,7 +618,7 @@ body{
 }
 
 .why-header span{
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
@@ -624,7 +627,7 @@ body{
 .why-progress{
     width:60%;
     height:2px;
-    background:rgba(255,255,255,0.1);
+    background:rgb(200, 198, 198);
     margin:0 auto 60px;
     position:relative;
 }
@@ -632,7 +635,7 @@ body{
 .why-bar{
     height:100%;
     width:0%;
-    background:linear-gradient(90deg,var(--gold1),var(--gold3));
+    background:linear-gradient(90deg,var(--gold1),var(--gold1));
     transition:0.5s ease;
 }
 
@@ -644,16 +647,38 @@ body{
 /* TRACK */
 .why-track{
     display:flex;
-    transition:0.8s cubic-bezier(0.77, 0, 0.175, 1);
+    transition:transform 0.6s ease;
 }
 
-/* ITEM */
 .why-item{
     min-width:100%;
     text-align:center;
-    padding:0 12%;
+    padding:60px 12%;
     position:relative;
+
+    background:rgba(255, 255, 255, 0.6);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    box-shadow:0 10px 40px rgba(198, 196, 196, 0.803);
+    transition:0.4s ease;
+     opacity:0.6;
+    transform:scale(0.9);
+
+    flex-shrink:0;
 }
+/* active slide effect */
+.why-item{
+    opacity:0.5;
+    transform:scale(0.9);
+    transition:0.4s;
+}
+
+.why-item.active{
+    opacity:1;
+    transform:scale(1);
+}
+
+
 
 /* BIG BACKGROUND NUMBER */
 .bg-number{
@@ -661,10 +686,14 @@ body{
     top:-40px;
     left:50%;
     transform:translateX(-50%);
-    font-size:160px;
-    font-weight:800;
-    color:rgba(255,255,255,0.04);
+    color:rgba(51, 51, 51, 0.262);
     pointer-events:none;
+     font-size:180px;
+    font-weight:900;
+    background:linear-gradient(175deg,var(--gold1),transparent);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    opacity:0.25;
 }
 
 /* TITLE */
@@ -672,11 +701,12 @@ body{
     font-size:34px;
     margin-bottom:20px;
     transition:0.3s;
+    color:#272626;
 }
 
 /* TEXT */
 .why-item p{
-    color:#aaa;
+    color:#555454;
     max-width:520px;
     margin:auto;
     line-height:1.8;
@@ -694,19 +724,24 @@ body{
 
 /* HOVER EFFECT */
 .why-item:hover h3{
-    color:var(--gold2);
+    color:var(--gold1);
 }
 
 /* CONTROLS */
 .why-controls{
     text-align:center;
-    margin-top:60px;
+    margin-top:50px;    
+}
+
+.why-controls{
+    position:relative;
+    z-index:10;
 }
 
 .why-btn{
     background:transparent;
-    border:1px solid var(--gold2);
-    color:var(--gold2);
+    border:1px solid var(--gold1);
+    color:var(--gold1);
     padding:12px 18px;
     margin:0 10px;
     cursor:pointer;
@@ -738,6 +773,7 @@ body{
 
     .bg-number{
         font-size:100px;
+    
     }
 }
 

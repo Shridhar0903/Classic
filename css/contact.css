@@ -58,8 +58,6 @@ body{
 }
 
 
-
-
 /* ===== NAVBAR ===== */
 .navbar{
     position:fixed;
@@ -181,6 +179,7 @@ body{
   color: white;
   text-align: center;
   overflow: hidden;
+   height:70vh;
 }
 
 /* Overlay */

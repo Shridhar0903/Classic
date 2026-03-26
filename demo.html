@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<Style>
+
+:root{
+    --gold1:#c9a227;
+    --gold2:#f5d76e;
+    --gold3:#fff3b0;
+    --dark:#1a1a1a; /* dark text color */
+    --secondary:#555555; /* secondary text */
+    --section-bg:#fffdf0; /* light cream background */
+}
+
+/* ===== Carousel Section ===== */
+.why-ultra-carousel {
+    padding: 60px 20px 100px;
+    background: #111; /* deep black background */
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    perspective: 1200px; /* 3D perspective for curved effect */
+}
+
+/* HEADER */
+.carousel-header h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+.carousel-header h2 span {
+    color: gold;
+}
+
+/* CAROUSEL TRACK */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+.carousel-track {
+    display: flex;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+/* CARDS */
+.carousel-item {
+    background: #1c1c1c; /* dark card */
+    border: 2px solid gold;
+    border-radius: 25px;
+    min-width: 260px;
+    max-width: 280px;
+    margin: 0 20px;
+    padding: 30px 20px;
+    text-align: center;
+    transform-origin: center center;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+}
+.carousel-item .icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: gold;
+}
+.carousel-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+.carousel-item p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #ddd;
+}
+
+/* CONTROLS */
+.carousel-controls {
+    text-align: center;
+    margin-top: 30px;
+}
+.carousel-btn {
+    background: gold;
+    border: none;
+    color: #111;
+    font-size: 1.5rem;
+    padding: 10px 18px;
+    margin: 0 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.carousel-btn:hover {
+    background: #fff;
+    color: #111;
+}
+
+/* 3D Curved Effect (JS will rotate track) */
+
+</Style>
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="why-ultra-carousel">
+
+    <!-- HEADER -->
+    <div class="carousel-header">
+        <h2>Why <span>Choose Us</span></h2>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div class="carousel">
+        <div class="carousel-track">
+
+            <!-- CARD 01 -->
+            <div class="carousel-item">
+                <div class="icon">⚙️</div>
+                <h3>Advanced Technology</h3>
+                <p>Modern powder coating techniques and well-maintained equipment ensure uniform coating and strong adhesion.</p>
+            </div>
+
+            <!-- CARD 02 -->
+            <div class="carousel-item">
+                <div class="icon">👨‍🔧</div>
+                <h3>Expert Team</h3>
+                <p>Guided by Mr. Madhukar R. Mali, our team ensures every project meets industry standards.</p>
+            </div>
+
+            <!-- CARD 03 -->
+            <div class="carousel-item">
+                <div class="icon">🏆</div>
+                <h3>Quality Standards</h3>
+                <p>Strict quality control at every stage ensures durability, corrosion resistance, and flawless finish.</p>
+            </div>
+
+            <!-- CARD 04 -->
+            <div class="carousel-item">
+                <div class="icon">⏱️</div>
+                <h3>Timely Delivery</h3>
+                <p>Streamlined processes ensure on-time project completion without compromising quality.</p>
+            </div>
+
+            <!-- CARD 05 -->
+            <div class="carousel-item">
+                <div class="icon">🎨</div>
+                <h3>Custom Solutions</h3>
+                <p>Tailored coating solutions based on material type, application, and industry requirements.</p>
+            </div>
+
+            <!-- CARD 06 -->
+            <div class="carousel-item">
+                <div class="icon">🌱</div>
+                <h3>Eco Friendly</h3>
+                <p>Environmentally friendly powder coating process with minimal waste and reduced emissions.</p>
+            </div>
+
+            <!-- CARD 07 -->
+            <div class="carousel-item">
+                <div class="icon">🤝</div>
+                <h3>Customer Focus</h3>
+                <p>Long-term relationships through consistent quality, transparent communication, and dependable service.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="carousel-controls">
+        <button class="carousel-btn prev">‹</button>
+        <button class="carousel-btn next">›</button>
+    </div>
+
+</section>
+
+<script>
+  const track = document.querySelector('.carousel-track');
+const items = document.querySelectorAll('.carousel-item');
+let angle = 0;
+
+document.querySelector('.next').addEventListener('click', () => {
+    angle -= 360 / items.length;
+    track.style.transform = `translateZ(-500px) rotateY(${angle}deg)`;
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    angle += 360 / items.length;
+    track.style.transform = `translateZ(-500px) rotateY(${angle}deg)`;
+});
+</script>
+
+</body>
+</html>
