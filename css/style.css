@@ -624,7 +624,7 @@ body{
 
 /* ===================== SERVICES SECTION ===================== */
 .services {
-  padding: 10px 8% 30px;
+  padding: 10px 8% 50px;
   background: #ffffff;
   position: relative;
   overflow: hidden;
@@ -851,7 +851,7 @@ body{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:55px 6%;
+padding:80px 6%;
 background:#f8fbff;
 position:relative;
 overflow:hidden;

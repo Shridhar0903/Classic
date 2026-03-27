@@ -220,7 +220,7 @@ body{
 
 /* ===== GALLERY SECTION ===== */
 .gallery-section {
-    padding:80px 8%;
+    padding:80px 6%;
 }
 
 .gallery-header {
@@ -460,7 +460,7 @@ body{
 
 /* ===== Featured Projects Section ===== */
 .featured-projects {
-    padding: 80px 20px;
+    padding: 80px 6%;
     background: #f8f8f8;
     text-align: center;
 }
@@ -550,7 +550,8 @@ body{
 
 
 
-/* ==========================================Footer==================================== */
+/* ================= FOOTER ================= */
+
 .footer {
     background: #050505;
     color: #fff;
@@ -678,6 +679,7 @@ body{
 /* ================= SOCIAL ICONS ================= */
 .footer-socials {
     margin-top: 20px;
+    margin-left:1px;
     display: flex;
     gap: 12px;
 }
@@ -712,4 +714,40 @@ body{
     border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 14px;
     color: #aaa;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* TABLET */
+@media(max-width: 992px){
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}
+
+/* MOBILE */
+@media(max-width: 600px){
+    .footer {
+        padding-top: 60px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer-col h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-contact li {
+        justify-content: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
 }

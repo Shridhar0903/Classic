@@ -262,7 +262,7 @@ body{
 
 /* ================= ELITE ABOUT ================= */
 .about-elite{
-    padding:50px 8%;
+    padding:90px 8% 60px;
     background:#ffffff;
     color:var(--dark);
     margin-top: -40px;
