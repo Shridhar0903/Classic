@@ -262,7 +262,7 @@ body{
 
 /* ================= ELITE ABOUT ================= */
 .about-elite{
-    padding:120px 8%;
+    padding:50px 8%;
     background:#ffffff;
     color:var(--dark);
     margin-top: -40px;
@@ -602,7 +602,7 @@ body{
 /*=========================== Why================================= */
 
 .why-ultra{
-    padding:140px 0;
+    padding:30px 8%;
     color:var(--dark);
     position:relative;
     overflow:hidden;
@@ -742,7 +742,8 @@ body{
 /* CONTROLS */
 .why-controls{
     text-align:center;
-    margin-top:50px;    
+    margin-top:5px; 
+    margin-bottom: 20px;   
 }
 
 .why-controls{

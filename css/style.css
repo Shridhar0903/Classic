@@ -7,9 +7,9 @@
 }
 
 body{
-    /* background:#ffffff;
-     */
-    background:#fffdf0;
+    background:#ffffff;
+     
+   
 }
 
 /* BASE */
@@ -223,9 +223,6 @@ body{
         rgba(0,0,0,0.1) 80%,
         transparent 100%
     );
-
-    /* OPTIONAL: keep blur safely */
-     /* backdrop-filter: blur(3px);  */
 }
 
 /* CONTENT */
@@ -247,6 +244,17 @@ body{
     font-weight:700;
     margin-bottom:15px;
     line-height:1.2;
+}
+.hero-content h1 span {
+    font-size: 55px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.2;
+
+    /* GRADIENT TEXT */
+    background: linear-gradient(90deg, #d4af37, #ffffff, #b8962e); /* gold-white theme */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* PARAGRAPH */
@@ -351,7 +359,7 @@ body{
 /* ===== SOCIAL ICONS ===== */
 .social-icons{
     position:absolute;
-    bottom:40px;
+    bottom:120px;
     right:40px;
     display:flex;
     flex-direction:column;
@@ -369,7 +377,7 @@ body{
     align-items:center;
     justify-content:center;
     border-radius:50%;
-
+   
     color:#fff;
     font-size:18px;
     text-decoration:none;
@@ -391,44 +399,11 @@ body{
 .social-icons .facebook:hover{
     background:#1877f2;
 }
-/* BRAND COLORS */
-/* .social-icons .facebook{
-    background:#1877f2;
-} */
-
-/* .social-icons .instagram{
-    background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
-} */
 
 .social-icons .instagram:hover{
     background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
 }
 
-.social-icons .whatsapp{
-    position:relative;
-}
-
-/* WHATSAPP SPECIAL PULSE */
-.social-icons .whatsapp::after{
-    content:"";
-    position:absolute;
-    width:100%;
-    height:100%;
-    border-radius:50%;
-    background:rgba(37,211,102,0.4);
-    animation:pulse 2s infinite;
-    z-index:-1;
-}
-/* .social-icons .whatsapp{
-    background:#25D366;
-    color:#fff;
-} */
-
-
-.social-icons .whatsapp:hover{
-    background:#25D366;
-    color:#fff;
-}
 
 /* ANIMATION */
 @keyframes socialFade{
@@ -649,7 +624,7 @@ body{
 
 /* ===================== SERVICES SECTION ===================== */
 .services {
-  padding: 100px 6%;
+  padding: 10px 8% 30px;
   background: #ffffff;
   position: relative;
   overflow: hidden;
@@ -876,7 +851,7 @@ body{
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:120px 8%;
+padding:55px 6%;
 background:#f8fbff;
 position:relative;
 overflow:hidden;
@@ -1245,6 +1220,7 @@ transform:translateX(-50%);
 /* ================= SOCIAL ICONS ================= */
 .footer-socials {
     margin-top: 20px;
+    margin-left:1px;
     display: flex;
     gap: 12px;
 }
