@@ -203,7 +203,7 @@ body{
         rgba(0,0,0,0.2) 75%,
         transparent 100%
     );
-    backdrop-filter: blur(3px);
+  
     z-index:1;
     pointer-events:none;
 }
@@ -221,6 +221,7 @@ body{
     align-items:center;
     justify-content:center;
 }
+
 
 /* HEADING */
 .about-hero-content h1{
@@ -279,6 +280,18 @@ body{
 .about-left{
     position:sticky;
     top:120px;
+}
+
+.about-left::before{
+    content:"ABOUT";
+    position:absolute;
+    margin-top: 100px;
+    margin-left: -40px;
+    font-size:120px;
+    font-weight:800;
+    color:rgba(0,0,0,0.04);
+    letter-spacing:10px;
+    z-index:0;
 }
 
 .about-left .tag{
@@ -604,7 +617,6 @@ body{
     background:url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
     opacity:0.05;
 }
-
 
 /* HEADER */
 .why-header{
