@@ -10,6 +10,10 @@ body{
      
     /* background:linear-gradient(90deg,#0a0a0ae6,#1d1800); */
 }
+html, body{
+    overflow-x: hidden;
+}
+
 
 /* BASE */
 .reveal,
@@ -167,6 +171,100 @@ body{
     box-shadow:0 0 18px rgba(245,215,110,0.5);
 }
 
+/* ===== HAMBURGER ===== */
+.menu-toggle{
+    display:none;
+    font-size:26px;
+    color:#fff;
+    cursor:pointer;
+}
+
+/* ===== CLOSE BUTTON ===== */
+.close-btn{
+    display:none;
+    font-size:28px;
+    color:#fff;
+    text-align:right;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+/* MOBILE CTA */
+.cta-mobile{
+    display:none;
+    text-decoration:none;
+    padding:10px 20px;
+    border-radius:30px;
+    color:#000;
+    background:linear-gradient(90deg,var(--gold1),var(--gold2));
+    text-align:center;
+    margin-top:20px;
+    font-weight:600;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 992px){
+
+    .navbar{
+        padding:10px 20px;
+    }
+
+    /* SHOW HAMBURGER */
+    .menu-toggle{
+        display:block;
+    }
+
+    /* NAV MENU STYLE */
+    .nav-links{
+        position:fixed;
+        top:0;
+        left:-100%;
+        width:270px;
+        height:100vh;
+        background:#0a0a0a;
+        flex-direction:column;
+        padding:30px;
+        gap:25px;
+        transition:0.4s ease;
+        z-index:2000;
+    }
+
+    /* OPEN MENU */
+    .nav-links.active{
+        left:0;
+    }
+
+    /* SHOW CLOSE */
+    .close-btn{
+        display:block;
+    }
+
+    /* NAV ITEMS */
+    .nav-item{
+        font-size:18px;
+    }
+
+    /* HIDE DESKTOP CTA */
+    .cta-btn{
+        display:none;
+    }
+
+    /* SHOW MOBILE CTA */
+    .cta-mobile{
+        display:block;
+    }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 600px){
+    .logo img{
+        height:55px;
+    }
+
+    .nav-links{
+        width:230px;
+    }
+}
 /* ============Hero section========= */
 
 .contact-hero {
@@ -225,6 +323,43 @@ body{
   background: white;
 }
 
+@media(max-width:600px){
+
+    .contact-hero{
+        height: 50vh;           /* ✅ reduce height */
+        padding: 0 15px;
+    }
+
+    .hero-content{
+        max-width: 100%;
+    }
+
+    /* HEADING */
+    .hero-content h1{
+        font-size: 28px;        /* ✅ mobile-friendly */
+        line-height: 1.3;
+        margin-bottom: 10px;
+    }
+
+    /* TEXT */
+    .hero-content p{
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    /* OVERLAY (slightly lighter for mobile clarity) */
+    .hero-overlay{
+        background: linear-gradient(135deg, rgba(0,0,0,0.7), rgb(0, 7, 14));
+    }
+
+    /* SLANTED BOTTOM FIX */
+    .contact-hero::after{
+        height: 60px; /* ✅ smaller slope */
+    }
+
+}
 
 /* =============================Contact form ============================== */
 
@@ -237,27 +372,14 @@ body{
 }
 
 /* ================= CARD ================= */
-/* .contact-card {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-left: 30px;
-    margin-right: 30px;
-   margin-bottom: 30px;
-   height: 70vh;
-
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-} */
 
 .contact-card {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
   background: #fff;
   border-radius: 12px;
-  padding: 30px;              /* ✅ OUTER PADDING (main fix) */
-  gap: 30px;                  /* space between left & right */
+  padding: 30px;              
+  gap: 30px;                  
   box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   margin-bottom: 30px;
 }
@@ -367,6 +489,95 @@ button {
   .contact-wrapper {
     margin-top: -80px;
   }
+}
+
+@media(max-width:600px){
+
+  /* WRAPPER */
+  .contact-wrapper{
+    margin-top: 10px;   /* balanced overlap */
+    padding: 0 15px;
+    margin-bottom: 50px;
+  }
+
+  /* CARD */
+  .contact-card{
+    grid-template-columns: 1fr;   /* stack */
+    padding: 20px;
+    gap: 20px;
+    border-radius: 10px;
+  }
+
+  /* LEFT SIDE */
+  .contact-info{
+    padding: 25px 20px;
+    text-align: left;
+  }
+
+  .contact-info h2{
+    font-size: 20px;
+  }
+
+  .contact-info p{
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  /* INFO BOX */
+  .info-box{
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+
+  .info-box i{
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  /* SOCIAL */
+  .contact-socials{
+    margin-top: 25px;
+    justify-content: flex-start;
+  }
+
+  .contact-socials a{
+    width: 35px;
+    height: 35px;
+    font-size: 13px;
+  }
+
+  /* FORM */
+  .contact-form{
+    padding: 20px 10px;
+  }
+
+  .contact-form h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  /* INPUT ROW FIX (VERY IMPORTANT) */
+  .input-row{
+    flex-direction: column;   /* ✅ stack inputs */
+    gap: 10px;
+  }
+
+  input, textarea{
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  textarea{
+    height: 100px;
+  }
+
+  /* BUTTON */
+  button{
+    padding: 10px;
+    font-size: 14px;
+  }
+
 }
 
 
@@ -503,11 +714,63 @@ button {
 }
 
 /* ================= RESPONSIVE ================= */
-@media(max-width:768px){
-  .map-card {
-    position: static;
-    margin-top: 20px;
+@media(max-width:600px){
+
+  /* SECTION */
+  .map-section{
+    padding: 60px 15px;
   }
+
+  /* HEADER */
+  .map-header{
+    margin-bottom: 30px;
+  }
+
+  .map-header h2{
+    font-size: 24px;
+  }
+
+  .map-header p{
+    font-size: 14px;
+  }
+
+  /* MAP */
+  .map-wrapper iframe{
+    height: 250px;   /* ✅ smaller for mobile */
+  }
+
+  /* CARD (VERY IMPORTANT FIX) */
+  .map-card{
+    position: static;        /* ✅ remove floating */
+    margin-top: 15px;
+    max-width: 100%;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .map-card h3{
+    font-size: 18px;
+  }
+
+  .map-card p{
+    font-size: 13px;
+  }
+
+  /* BUTTON */
+  .map-btn{
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  /* WHATSAPP BUTTON */
+  .whatsapp-float{
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    bottom: 15px;
+    right: 15px;
+  }
+
 }
 
 /* ================= FOOTER ================= */
@@ -672,4 +935,158 @@ button {
     border-top: 1px solid rgba(255,255,255,0.08);
     font-size: 14px;
     color: #aaa;
+}
+
+
+@media(max-width: 600px){
+
+    .footer{
+        padding: 60px 0 25px;
+        text-align: center;
+    }
+
+    .footer-container{
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    /* LOGO */
+    .footer-logo{
+        height: 60px;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    /* TEXT */
+    .footer-col p{
+        font-size: 14px;
+        line-height: 1.6;
+        color: #aaa;
+        margin: 0 auto;
+    }
+
+    /* HEADINGS */
+    .footer-col h3{
+        font-size: 20px;
+        margin: 30px 0;
+        letter-spacing: 0.5px;
+        text-align: center;
+    }
+
+    .footer-col h3::after{
+        left: 50%;
+        transform: translateX(-50%);
+        width: 30px;
+        height: 2px;
+    }
+
+    /* LINKS */
+    .footer-col ul{
+        padding: 0;
+    }
+
+    .footer-col ul li{
+        margin-bottom: 8px;
+    }
+
+    .footer-col ul li a{
+        font-size: 16px;
+        display: inline-block;
+    }
+
+    /* CONTACT - PREMIUM */
+.footer-contact li{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+
+    font-size: 15px;
+    color: #ccc;
+
+    padding: 8px 0;
+    transition: 0.3s ease;
+}
+
+/* ICON STYLE */
+.footer-contact i{
+    font-size: 14px;
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    color: var(--gold2);
+
+    transition: 0.3s ease;
+}
+
+/* TEXT LINK */
+.footer-contact a{
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s ease;
+    text-align: start;
+}
+
+/* HOVER EFFECT */
+.footer-contact li:hover a{
+    color: var(--gold2);
+}
+
+.footer-contact li:hover i{
+    background: linear-gradient(90deg,var(--gold1),var(--gold2));
+    color: #000;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(245,215,110,0.5);
+}
+
+    /* SOCIAL */
+    .footer-socials{
+        justify-content: center;
+        margin-top: 15px;
+        gap: 12px;
+    }
+
+    .footer-socials a{
+        width: 45px;
+        height: 45px;
+        font-size: 14px;
+    }
+
+    /* REMOVE HOVER SHIFT */
+    .footer-col ul li a:hover{
+        transform: none;
+    }
+
+    /* FOOTER BOTTOM */
+    .footer-bottom{
+        margin-top: 35px;
+        font-size: 12px;
+        text-align: center;
+        color: #888;
+    }
+
+    /* WATERMARK */
+    .footer::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+
+        background: url("../images/CC.png") center no-repeat;
+        background-size: 500px; /* ✅ balanced for mobile */
+
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+    }
+
 }

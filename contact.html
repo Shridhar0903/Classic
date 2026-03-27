@@ -18,19 +18,34 @@
         </a>
     </div>
 
+      <!-- HAMBURGER -->
+    <div class="menu-toggle" id="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
     <!-- MENU -->
-    <nav class="nav-links">
+    <nav class="nav-links" id="nav-links">
+
+        <!-- CLOSE BUTTON -->
+        <div class="close-btn" id="close-btn">
+            <i class="fas fa-times"></i>
+        </div>
+
         <a href="index.html" class="nav-item ">Home</a>
         <a href="about.html" class="nav-item">About</a>
-        <a href="gallery.html" class="nav-item">Gallery</a>
+        <a href="gallery.html" class="nav-item ">Gallery</a>
         <a href="services.html" class="nav-item">Services</a>
-        <a href="contact.html" class="nav-item">Contact</a>
+        <a href="contact.html" class="nav-item active">Contact</a>
+
+        <!-- CTA INSIDE MENU (MOBILE ONLY) -->
+        <a href="contact.html" class="cta-mobile">Visit Now</a>
     </nav>
 
     <!-- CTA BUTTON -->
     <a href="contact.html" class="cta-btn">Visit Now</a>
 
 </header>
+
 
 
 <section class="contact-hero">
@@ -82,7 +97,7 @@
       <div class="contact-socials reveal ">
         <a href="#"><i class="fab fa-facebook-f"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
+  
       </div>
     </div>
 
@@ -135,7 +150,7 @@
     <!-- FLOATING CARD -->
     <div class="map-card reveal">
       <h3> Classic Surface Coating Technology</h3>
-      <p><i class="fas fa-map-marker-alt"></i> Wadmukhwadi Pune, India</p>
+      <p><i class="fas fa-map-marker-alt"></i>Shop no-16, SR.NO-441/1,khadi MAchine, Wadmukhwadi Pune, India</p>
       <p><i class="fas fa-phone"></i> 7083255495 / 7057094498</p>
       <p><i class="fas fa-envelope"></i> sales@calssicsurfacecoating.com</p>
 
@@ -192,11 +207,10 @@
             <h3>Contact Info</h3>
 
             <ul class="footer-contact">
-                <li>
+                  <li>
                     <i class="fas fa-map-marker-alt"></i>
-                    Shop No.16, SR.NO.441/1, Khadi Machine, Wadmukhwadi, Pune-412105
+                    <a href=""> Shop No.16, SR.NO.441/1, Khadi Machine, Wadmukhwadi, Pune-412105</a>
                 </li>
-
                  <li>
                     <i class="fas fa-phone-alt"></i>
                     <a href="tel:+917083255495" class="call-btn">7083255495</a>
@@ -217,10 +231,10 @@
 </footer>
 
 <!-- WhatsApp Floating Button -->
-<a href="https://wa.me/919403118661" target="_blank" class="whatsapp-float">
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/917083255495" target="_blank" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
 </a>
-
 
 <script src="js/script.js"></script>
 <script src="js/scroll.js"></script>

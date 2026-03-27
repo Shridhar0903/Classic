@@ -1,3 +1,16 @@
+// for responsive menu
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+const closeBtn = document.getElementById("close-btn");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.add("active");
+});
+
+closeBtn.addEventListener("click", () => {
+  navLinks.classList.remove("active");
+});
+
 // =========== Navigation menu
 const links = document.querySelectorAll(".nav-item");
 
