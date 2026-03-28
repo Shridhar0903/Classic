@@ -1653,6 +1653,15 @@ transform:translateX(-50%);
     font-size: 14px;
     color: #aaa;
 }
+.qiro-link {
+    color: #FFD700; /* golden color */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.qiro-link:hover {
+    text-decoration: underline;
+}
 
 /* ================= RESPONSIVE ================= */
 
