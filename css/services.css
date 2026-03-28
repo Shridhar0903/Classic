@@ -817,8 +817,6 @@ body{
 
 @media(max-width:600px){
 
-@media(max-width:600px){
-
 /* SECTION */
 .services-main{
     padding:40px 15px;
@@ -880,12 +878,10 @@ body{
 /* CTA FIX (BOTTOM RIGHT) */
 .service-cta,
 .service-ctareverse{
-    margin-top:auto;        /* push to bottom */
-    align-self:flex-end;    /* move right */
-
+    margin-top:auto;
+    align-self:flex-end;
     margin-right:15px;
     margin-bottom:20px;
-
     font-size:13px;
     padding:8px 18px;
 }
@@ -895,15 +891,12 @@ body{
     transform:none;
 }
 
-/* FIX ONLY REVERSE CARD ORDER */
-@media(max-width:600px){
-
+/* ===== FIXED REVERSE ORDER (NO NESTING) ===== */
 .service-panel.reverse{
     display:flex;
     flex-direction:column;
 }
 
-/* FORCE ORDER */
 .service-panel.reverse .service-img{
     order:1;
 }
@@ -916,10 +909,8 @@ body{
 
 .service-panel.reverse .service-ctareverse{
     order:3;
-
     margin-top:auto;
     align-self:flex-end;
-
     margin-right:15px;
     margin-bottom:20px;
 }
