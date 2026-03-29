@@ -590,7 +590,7 @@ body{
 
     /* WATERMARK FIX */
     .about-left::before{
-        font-size: 60px; /* smaller */
+        font-size: 80px; /* smaller */
         margin-top: 40px;
         margin-left: 0;
         left: 50%;
