@@ -385,23 +385,25 @@ body{
     padding:90px 8% 60px;
     background:#ffffff;
     color:var(--dark);
-    margin-top: -40px;
+    margin-top: 0;
+
+    position: relative; /* FIX */
 }
 
 /* LAYOUT */
 .about-elite-container{
-    display:grid;
+    display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap:80px;
-    align-items:flex-start;
+    gap: 80px;
+    align-items: start;  /* ✅ change from flex-start */
 }
 
 /* LEFT SIDE */
 .about-left{
-    position:sticky;
-    top:120px;
+    position: sticky;
+    top: 0;
+    align-self: start;   /* ✅ VERY IMPORTANT */
 }
-
 .about-left::before{
     content:"ABOUT";
     position:absolute;
@@ -415,7 +417,7 @@ body{
 }
 
 .about-left .tag{
-  color:var(--dark);
+    color:var(--dark);
     font-size:14px;
     letter-spacing:2px;
 }
@@ -431,8 +433,6 @@ body{
     -webkit-background-clip:text;
     -webkit-text-fill-color:transparent;
 }
-
-
 
 /* RIGHT SIDE */
 .about-right{
@@ -457,7 +457,7 @@ body{
     font-size:15px;
 }
 
-/* INLINE FEATURE LINE (UNIQUE PART) */
+/* INLINE FEATURE LINE */
 .about-line{
     display:flex;
     align-items:flex-start;
@@ -478,7 +478,6 @@ body{
     color:#a1a1a1f0;
     font-size:15px;
 }
-
 /* RESPONSIVE */
 @media(max-width:900px){
     .about-elite-container{
