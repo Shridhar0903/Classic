@@ -590,7 +590,7 @@ body{
 
     /* WATERMARK FIX */
     .about-left::before{
-        font-size: 80px; /* smaller */
+        font-size: 80px; 
         margin-top: 40px;
         margin-left: 0;
         left: 50%;
@@ -604,7 +604,7 @@ body{
     }
 
     .about-left h2{
-        font-size: 26px; /* perfect mobile */
+        font-size: 26px; 
         line-height: 1.4;
     }
 
